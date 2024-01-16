@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form id="passwordForm">
+            <h1 class="heading">Password Manager</h1>
+            <!-- <span> -->
+                <label for="website">Website:</label>
+                <input type="text" id="website" name="website" required>
+            <!-- </span> -->
+
+            <!-- <span> -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            <!-- </span> -->
+
+            <!-- <span> -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            <!-- </span> -->
+            
+            <button type="submit">Save Password</button>
+        </form>
+
+        <div id="passwordList">
+            <!-- Passwords will be dynamically added here -->
+        </div>
+    </div>
+    <script>
+        // Get the form element
+        const passwordForm = document.getElementById('passwordForm');
+
+        // Add event listener to the form submit event
+        passwordForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the input values
+            const websiteInput = document.getElementById('website');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            
+
+            // Create a new password object
+            const password = {
+                website: websiteInput.value,
+                username: usernameInput.value,
+                password: passwordInput.value
+            };
+
+            // Clear the input fields
+            websiteInput.value = '';
+            usernameInput.value = '';
+            passwordInput.value = '';
+
+            // Call a function to save the password
+            savePassword(password);
+        });
+
+        // Function to save the password
+        function savePassword(password) {
+            // Create a new password element
+            const passwordElement = document.createElement('div');
+            passwordElement.classList.add('password');
+
+            // Create HTML content for the password element
+            passwordElement.innerHTML = `
+                <p><strong>Website:</strong> ${password.website}</p>
+                <p><strong>Username:</strong> ${password.username}</p>
+                <p><strong>Password:</strong> ${password.password}</p>
+            `;
+
+            const gap = document.createElement('br');
+            passwordElement.appendChild(gap);
+
+            const divider = document.createElement('hr');
+            passwordElement.appendChild(divider);
+            // Append the password element to the password list
+            const passwordList = document.getElementById('passwordList');
+            passwordList.appendChild(passwordElement);
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: purple;
+}
+
+.container{
+    max-width: 50%;
+    height: auto;
+    /* background-color: rgb(255, 255, 255); */
+    margin: 30px auto;
+    padding: 23px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#passwordForm {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(129, 51, 255);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+label {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    color: #efefef;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+input:focus{
+    outline: none;
+}
+
+.heading{
+    color: #fff;
+    font-size: x-large;
+    font-family: 'Lato';
+}
+
+#passwordList{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgb(255, 252, 51);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    color: purple;
+}
+
+.password {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 2px;
+    font-family: 'Lato';
+}
